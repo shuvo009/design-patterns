@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace design_patterns
 {
@@ -15,8 +10,8 @@ namespace design_patterns
         [InlineData("mac", "Mac Button", "Mac CheckBox")]
         public void Test(string os, string button, string checkbox)
         {
-            IGuiFactory abstractFactory = os == "win" 
-                ? new WinGuiFactory() 
+            IGuiFactory abstractFactory = os == "win"
+                ? new WinGuiFactory()
                 : new MacGGuiFactor();
 
             var application = new Application(abstractFactory);
@@ -125,6 +120,6 @@ namespace design_patterns
             return new MacCheckBox();
         }
     }
-    #endregion
 
+    #endregion
 }
